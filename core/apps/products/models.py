@@ -98,7 +98,22 @@ class ProductCharacteristics(models.Model):
 
 
 class ProductSize(models.Model):
-    pass
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        verbose_name="Продукт",
+        related_name="sizes",
+    )
+    length = models.IntegerField(default=0, verbose_name="Длина")
+    width = models.IntegerField(default=0, verbose_name="Ширина")
+    height = models.IntegerField(default=0, verbose_name="Высота")
+
+    def __str__(self):
+        return f"{self.length} СМ х {self.width} СМ х {self.height} СМ"
+
+    class Meta:
+        verbose_name = "Размер продукта"
+        verbose_name_plural = "Размеры продукта"
 
 
 # class ProductComment(BaseModel):
