@@ -1,9 +1,16 @@
 from ninja import Schema
 from core.api.schemas.categories.schema import CategorySchema
+from decimal import Decimal
+from typing import Optional
 
 
 class ProductListItemSchema(Schema):
-    pass
+    id: int
+    name: str
+    slug: str
+    price: Decimal
+    preview: Optional[str]
+    category: CategorySchema
 
 
 class ProductDetailSchema(Schema):

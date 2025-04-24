@@ -19,9 +19,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # internal
-
+    "ninja_extra",
+    "ninja_jwt",
     # local
     "core.apps.accounts.apps.AccountsConfig",
     "core.apps.categories.apps.CategoriesConfig",
